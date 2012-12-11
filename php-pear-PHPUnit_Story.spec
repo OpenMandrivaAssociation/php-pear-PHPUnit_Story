@@ -3,7 +3,7 @@
 Summary:	Story extension for PHPUnit to facilitate Behaviour-Driven Development
 Name:		php-pear-%{upstream_name}
 Version:	1.0.0
-Release:	%mkrel 2
+Release:	%mkrel 1
 License:	BSD
 Group:		Development/PHP
 URL:		http://www.phpunit.de/
@@ -17,7 +17,6 @@ BuildArch:	noarch
 BuildRequires:	php-pear
 BuildRequires:	php-channel-phpunit
 Suggests:	php-pear-PHPUnit >= 3.6.3
-BuildRequires:	php-cli
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -60,7 +59,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -71,3 +70,13 @@ fi
 %{_datadir}/pear/PHPUnit/Extensions/Story
 %{_datadir}/pear/packages/PHPUnit_Story.xml
 
+
+
+%changelog
+* Wed Nov 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-1mdv2012.0
++ Revision: 730891
+- import php-pear-PHPUnit_Story
+
+
+* Wed Nov 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.0-1mdv2010.2
+- initial Mandriva package
