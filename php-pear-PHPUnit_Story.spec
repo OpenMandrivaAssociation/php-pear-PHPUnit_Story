@@ -3,7 +3,7 @@
 Summary:	Story extension for PHPUnit to facilitate Behaviour-Driven Development
 Name:		php-pear-%{upstream_name}
 Version:	1.0.0
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/PHP
 URL:		http://www.phpunit.de/
